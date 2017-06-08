@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <a data-placement="bottom" data-toggle="popover" data-title="Login" data-container="body" type="button" data-html="true" href="#" id="login" class="btn btn-danger" style="padding-left: 15%;padding-right: 15%; text-align: center;" >Send The QR code Link</a>
+    <div id="popover-content" class="hide">
+      <form class="form-inline" role="form">
+      
+          <input placeholder="Name" class="form-control" maxlength="5" type="text">
+          <button type="submit" class="btn btn-primary">Go To Login »</button>                                  
+        </div>
+      </form>
+    </div>
+  
+</div>
+<script>
+$("[data-toggle=popover]").popover({
+    html: true, 
+	content: function() {
+          return $('#popover-content').html();
+        }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+.row.content {height: 550px}
+   .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+     
+    }
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+</style>
+<body>
+
+<nav class="navbar navbar-fixed-top" style="background-color: #C3D1D6;margin:5px;">
+
+
+<ul class="nav navbar-nav">
+      <li class="active"><a href="profile.html">Home</a></li>
+      
+    </ul>
+<ul class="nav navbar-nav navbar-right" style="padding-right: 5px;">
+        <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp;logout</a></li>
+      </ul>
+    </nav>
+    <div class="container-fluid" style="padding-top: 4.3%;">
+   <div class="row content">
+        <div class="col-sm-3 sidenav">
+ <div class="media">
+    <div class="media-left " >
+      <img src="img/man.png" class="media-object" style="width:80px;padding-top: 10px;margin-left: 112px;">
+      <div id="profile" style="border-style: solid; border:1px;height: 250px;width: 250px;margin-left: 25px; background-color:#D7CADB;">welcome</div>
+    </div>
+      
+    </div>
+        </div>
+
+        <div class="col-sm-9" style="background-color: lavender; height: 550px;">
+        
+        <div class="col-md-3" style="height: 550px;border: 1px;border-style: solid;">
+        
+        </div>
+
+
+
+        <div class="col-md-8" style="height: 550px;border: 1px;border-style: solid; margin-left: 20px;">
+          <table class = "table table-bordered">
+   <caption>Bordered Table Layout</caption>
+   
+   <thead>
+      <tr>
+         <th>#</th>
+         <th>Document name</th>
+         <th>Signed</th>
+         <th>view</th>
+         <th>select</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <tr>
+         <td>Tanmay</td>
+         <td>Bangalore</td>
+         <td>560001</td>
+      </tr>
+      
+      <tr>
+         <td>Sachin</td>
+         <td>Mumbai</td>
+         <td>400003</td>
+      </tr>
+      
+      <tr>
+         <td>Uma</td>
+         <td>Pune</td>
+         <td>411027</td>
+      </tr>
+   </tbody>
+  
+</table>
+        </div>
+   </div>
+</div>
+
+<script type="jquery.js">
+/*  $(document).ready(function(){
+    $("#profile").show(function()
+    {
+      var username=$("#username").val();
+      ("#profile").html(username);
+    })
+  })
+</script>
+
+</body>
+</html>

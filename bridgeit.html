@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bridge it</title>
+    <script type="application/x-javascript" src="http://api.bridgeit.mobi/bridgeit/bridgeit.js"></script>
+</head>
+<body>
+<a id='scanBtn' type="button" 
+   onclick="bridgeit.scan('scanBtn', 'callback');">Scan a Code</a>
+
+<a id='scanBtn' type="button" 
+   onclick="bridgeit.scan('id', 'callback');">Scan a Code</a>
+
+
+<script type="text/javascript">
+function onAfterCaptureScan(event)  {
+    var text = event.value;
+    var scans = document.getElementById("scans");
+    var row1 = document.createElement('div');
+    row1.setAttribute('class','row');
+    row1.innerHTML = text;
+    scans.insertBefore(row1, scans.firstChild);
+}
+</script>
+</body>
+</html>

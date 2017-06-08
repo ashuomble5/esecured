@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>E-secure Registration</title>
+  <!--style for otp-->
+
+ 
+ 
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+
+ 
+
+ 
+</head>
+
+<body>
+
+
+
+  <!-- Trigger the modal with a button 
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create account</button>-->
+
+  <!-- Modal -->
+ <div class="container col-md-12"> 
+ <div class="container col-md-6"> 
+
+ <form  action="register.php" method="POST" name="register" id="register" >
+
+ <div class="row">
+ <!--<div class="col-md-offset-1">-->
+      <div class="panel panel-default panel-info">
+              <div class="panel-heading ">Ragistration</div>
+              <div class="panel-body">Ragistration form</div>
+      </div>
+       <div class="form-group">
+          <label   for="Username">Username:</label>
+          <input type="text" class="form-control" id="username" name="username"  placeholder="Username"  >
+      
+       </div>
+       
+
+      <div   class="form-group">
+       <label for="Lastname">Last name:</label>
+       <input type="text" class="form-control" id="lastname" name="lastname"  placeholder="Last name"  >
+      </div>
+
+
+
+      <div   class="form-group">
+       <label for="Gender">Gender</label>
+        <select class="form-control" id="gender" name="gender">
+         <option value="0">Select Gender</option>
+         <option value="1">Male</option>
+         <option value="2">Female</option>
+       </select>
+      </div>                                         
+  <div   class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age" name="age"  placeholder="Age" min="10" max="100"  >
+  </div>
+
+  <div   class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" name="email"  placeholder="Email"  >
+  </div>
+   <div   class="form-group">
+    <label for="Mobile NO.">Mobile No:</label>
+    <input type="tel" class="form-control" id="phone" name="phone"  placeholder="10 digit Mobile no."   >
+  </div>                                                        
+  <div   class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="password" name="password"  placeholder="password"  >
+  </div>
+    <div   class="form-group">
+    <label for="pwd">Confirm Password:</label>
+    <input type="password" class="form-control" id="cpassword" name="cpassword"   >
+  </div>
+
+
+<button type="button" class="btn btn-warning btn-lg" style="float: left;" data-toggle="modal" data-target="#myModal">Create account</button>
+
+</div>
+</div>
+<form method="get" action="">
+  <div  class="container col-md-6">
+
+ <div id="messages" class="container col-md-6" style="margin-top: 130px;">
+
+ </div> </div>
+<div class="container">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">mobile verification</h4>
+        </div>
+    
+        <div class="modal-body">
+<div class="form-group">
+
+    <label   for="phone">Moblile no.</label>
+    <input type="number" class="form-control" id="phone" name="phone"  placeholder="start with 91" required onblur="wait()" >
+      <span id="nover"></span>
+      <div id="wait"></div>
+      <!--<a href="otp.php" class="btn btn-info" rel="nofollow" style="float: right;margin-top: 10px;margin-bottom: 10px;">Get OTP</a>-->
+  </div>
+  <div class="form-group">
+       <label   for="otp">OTP</label>
+    <input type="text" class="form-control" id="otp" name="otp"  placeholder="6 digit code"  >
+        
+    
+      
+    </div>
+     <div class="form-group">
+<!--<button type="submit" class="btn btn-success btn-md" data-toggle="modal" data-target="login.php">verify</button>-->
+<a href="register.php" class="btn btn-success btn-block" rel="nofollow">verify</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+
+  </form>   
+
+
+</form>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#register').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+                       },
+        fields: {
+           username: {
+             validators: {
+                           notEmpty: {
+                                             message: 'The first name is required and cannot be empty'
+                                     },
+                            stringLength: {
+                                              max: 20,
+                                              min:8,
+                                              message: 'The first name must be 8 characters long'
+                                           },
+                                    
+                      
+                         }
+                     },
+           
+      
+ 
+        lastname: {
+                
+                        validators: {
+                            notEmpty: {
+                                             message: 'The last name is required and cannot be empty'
+                                      },
+                             stringLength: {
+                                                max: 20,
+                                              min:4,
+                                              message: 'The last name must be 4 characters long'
+                                           },
+                                    }
+                      
+                 },
+        age: {
+                
+                        validators: {
+                            notEmpty: {
+                                             message: 'please enter the age'
+                                      },
+                                    }
+                      
+                 },
+        email: {
+                validators: {
+                       notEmpty: {
+                                     message: 'The email address is required and cannot be empty'
+                                 },
+
+                    emailAddress:{
+                                  message: 'The email address is not valid'
+                                 },
+                            }    
+               },
+
+          phone: {
+                validators: {
+                               notEmpty: {
+                                   message: 'The phone is required and cannot be empty'
+                                         },
+                               stringLength: {
+                                   max: 11,
+                                   min:10,
+                                   message: 'the Mobile number should be 10 digits'
+                                             },
+                            }
+                     } ,  
+          
+
+        
+            
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and cannot be empty'
+                              },
+                    stringLength: {
+                        max: 10,
+                        min:8,
+                        message: 'The password must be 8 characters long'
+                                  },
+                            }
+                     }  ,
+      
+
+
+           cpassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'The confirm password is required and same as password'
+                              },
+                    stringLength: {
+                        max: 10,
+                        min:8,
+                        message: 'The password must be 8 characters long'
+                                  },
+                            }
+                     } , 
+},
+            
+});
+
+      });  
+
+function wait(){
+    // Create our XMLHttpRequest object
+    var hr = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "otp.php";
+    var fn = document.getElementById("phone").value;
+   // var ln = document.getElementById("last_name").value;
+    var vars = "phone="+fn;
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+      if(hr.readyState == 4 && hr.status == 200) {
+        var return_data = hr.responseText;
+      document.getElementById("wait").innerHTML = return_data;
+      }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(vars); // Actually execute the request
+    document.getElementById("wait").innerHTML = "processing...";
+}
+</script> 
+</body>
+</html>
